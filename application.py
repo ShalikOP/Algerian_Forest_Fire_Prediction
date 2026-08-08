@@ -4,7 +4,8 @@ import pandas as pd
 from flask import Flask,request,jsonify,render_template
 from sklearn.preprocessing import StandardScaler
 
-app = Flask(__name__)
+application = Flask(__name__)
+app = application
 
 
 scaler_model = pickle.load(open("/Users/mdshalique/Downloads/practicePythonOP/Algerian_Forest_Fire_Prediction/model/scaler.pkl","rb"))
@@ -14,7 +15,7 @@ ridge_model  = pickle.load(open("/Users/mdshalique/Downloads/practicePythonOP/Al
 def index():
     return render_template("index.html")
 
-@app.route("/predictdata", methods = ['POST' , 'GET'])
+@app.route("/predict", methods = ['POST' , 'GET'])
 def predict_datapoint():
     if request.method == 'POST':
         Temperature = float(request.form.get("Temperature"))
@@ -30,9 +31,9 @@ def predict_datapoint():
         
         new_data_scaled  = scaler_model.transform([[Temperature,RH,Ws,Rain,FFMC,DMC,ISI,Classes,region]])
 
-        result = ridge_model.predict(new_data_scaled)
+        result = round(ridge_model.predict(new_data_scaled)[0], 3)
 
-        return (render_template("home.html", result = result[0]))
+        return (render_template("home.html", result = result))
     
     else:
         return render_template("home.html")
