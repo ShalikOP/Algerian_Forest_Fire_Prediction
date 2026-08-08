@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #16251a, #263d2b);
+    color: #ffffff;
+}
+
+
+/* ---------- Welcome Page ---------- */
+
+.welcome-card {
+    width: 90%;
+    max-width: 650px;
+    margin: 150px auto;
+    padding: 55px 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.fire {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.welcome-card h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.welcome-card p {
+    color: #cbd5ce;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.welcome-line {
+    width: 70px;
+    height: 3px;
+    margin: 25px auto;
+    background: #63c174;
+    border-radius: 10px;
+}
+
+.subtitle {
+    font-size: 15px !important;
+}
+
+
+/* ---------- Prediction Page ---------- */
+
+.login {
+    width: 92%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 42px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header .fire {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #cbd5ce;
+}
+
+
+/* ---------- Inputs ---------- */
+
+.login form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box label {
+    margin-bottom: 7px;
+    color: #dbe5de;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-box input {
+    padding: 13px 15px;
+    border: 1px solid #536558;
+    border-radius: 9px;
+    background: #17231a;
+    color: white;
+    font-size: 15px;
+}
+
+.input-box input:focus {
+    outline: none;
+    border-color: #63c174;
+    box-shadow: 0 0 0 2px rgba(99, 193, 116, 0.15);
+}
+
+.input-box input::placeholder {
+    color: #89958c;
+}
+
+
+/* ---------- Button ---------- */
+
+.login button {
+    grid-column: 1 / -1;
+    margin-top: 5px;
+    padding: 15px;
+    border: none;
+    border-radius: 9px;
+    background: #4caf5b;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background: #3d984b;
+}
+
+
+/* ---------- Result ---------- */
+
+.login h2 {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    background: rgba(99, 193, 116, 0.12);
+    border: 1px solid rgba(99, 193, 116, 0.3);
+    color: #7de28a;
+    font-size: 20px;
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 650px) {
+
+    .login {
+        padding: 30px 20px;
+        margin: 25px auto;
+    }
+
+    .login form {
+        grid-template-columns: 1fr;
+    }
+
+    .login button {
+        grid-column: auto;
+    }
+
+    .header h1 {
+        font-size: 29px;
+    }
+
+    .welcome-card {
+        margin: 80px auto;
+        padding: 40px 25px;
+    }
+
+    .welcome-card h1 {
+        font-size: 30px;
+    }
+}

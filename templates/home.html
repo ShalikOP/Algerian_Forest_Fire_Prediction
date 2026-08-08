@@ -1,27 +1,92 @@
-<html>
-    <body>
-        <div class = "login">
-                <h1> FWI Prediction </h1>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWI Prediction</title>
 
-                <!-- Main Input for recieving Input to our ML-->
-                <form action = "{{url_for("predict_datapoint")}}" method = "POST">
-                    <input type = "text" name = "Temperature" placeholder = "Temperature" required = "required"/><br>
-                    <input type = "text" name = "RH" placeholder = "RH" required = "required"/><br>
-                    <input type = "text" name = "Ws" placeholder = "Ws" required = "required"/><br>
-                    <input type = "text" name = "Rain" placeholder = "Rain" required = "required"/><br>
-                    <input type = "text" name = "FFMC" placeholder = "FFMC" required = "required"/><br>
-                    <input type = "text" name = "DMC" placeholder = "DMC" required = "required"/><br>
-                    <input type = "text" name = "ISI" placeholder = "ISI" required = "required"/><br>
-                    <input type = "text" name = "Classes" placeholder = "Classes" required = "required"/><br>
-                    <input type = "text" name = "region" placeholder = "region" required = "required"/><br>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
 
-                    <button type = "submit" class = "btn btn-primary btn-block btn-large"> Predict </button>
-                </form>
+<body>
 
-                <h2>
-                    The FWI Prediction is : {{result}}
-                </h2>
+    <div class="login">
+
+        <div class="header">
+            <div class="fire">🔥</div>
+            <h1>FWI Prediction</h1>
+            <p>Enter the weather conditions to calculate the Fire Weather Index.</p>
         </div>
-    </body>
+
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+
+            <div class="input-box">
+                <label>Temperature</label>
+                <input type="text" name="Temperature"
+                       placeholder="Temperature" required="required">
+            </div>
+
+            <div class="input-box">
+                <label>Relative Humidity</label>
+                <input type="text" name="RH"
+                       placeholder="RH" required="required">
+            </div>
+
+            <div class="input-box">
+                <label>Wind Speed</label>
+                <input type="text" name="Ws"
+                       placeholder="Ws" required="required">
+            </div>
+
+            <div class="input-box">
+                <label>Rain</label>
+                <input type="text" name="Rain"
+                       placeholder="Rain" required="required">
+            </div>
+
+            <div class="input-box">
+                <label>FFMC</label>
+                <input type="text" name="FFMC"
+                       placeholder="FFMC" required="required">
+            </div>
+
+            <div class="input-box">
+                <label>DMC</label>
+                <input type="text" name="DMC"
+                       placeholder="DMC" required="required">
+            </div>
+
+            <div class="input-box">
+                <label>ISI</label>
+                <input type="text" name="ISI"
+                       placeholder="ISI" required="required">
+            </div>
+
+            <div class="input-box">
+                <label>Classes</label>
+                <input type="text" name="Classes"
+                       placeholder="Classes" required="required">
+            </div>
+
+            <div class="input-box">
+                <label>Region</label>
+                <input type="text" name="region"
+                       placeholder="Region" required="required">
+            </div>
+
+            <button type="submit">
+                🔥 Predict FWI
+            </button>
+
+        </form>
+
+        <h2>
+            THE FWI prediction is {{result}}
+        </h2>
+
+    </div>
+
+</body>
 </html>
