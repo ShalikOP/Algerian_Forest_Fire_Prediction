@@ -469,8 +469,11 @@ The application was deployed using AWS Elastic Beanstalk.
 
 Live URL:
 
-    <http://algerianforestfirepredictionappp-env.eba-duebr4ap.eu-north-1.elasticbeanstalk.com/>
-    <http://algerianforestfirepredictionappp-env.eba-duebr4ap.eu-north-1.elasticbeanstalk.com/predict/>
+    http://algerianforestfirepredictionappp-env.eba-duebr4ap.eu-north-1.elasticbeanstalk.com/
+
+---
+
+    http://algerianforestfirepredictionappp-env.eba-duebr4ap.eu-north-1.elasticbeanstalk.com/predict/
 
 
 ---
